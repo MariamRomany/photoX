@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="icon" type="image/png" href="images/title-image.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHjyyLIAd4snFpCI/SnyUjRrbdJsw1pGI1" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3c892758a4.js" crossorigin="anonymous"></script>
+    <link  href="https://fonts.googleapis.com/css?family=Montserrat"rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js"></script>
+    <title>Project Three</title>
+    <style>
+        
+/*mission*/
+.mission {
+    background: #151f20;
+}
+/*end of mission*/
+
+.fromLeft {
+    animation-name: fromLeft;
+    animation-duration: 3s;
+}
+
+.fromRight {
+    animation-name: fromRight;
+    animation-duration: 3s;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*collection*/
+.card-shadow{
+    box-shadow: 5px 8px 20px #444;
+}
+
+.heading{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background:#222;
+    width: 70%;
+    cursor: pointer;
+    opacity: .7;
+    transition: all .5s;
+}
+
+.heading:hover{
+    opacity: 1;
+}
+/*end of collection*/
+
+/*gallery*/
+.underline-dark{
+    width: 150px;
+    border: 3px solid #888;
+    margin: auto;
+}
+
+.gallery-list-item{
+    color: #777;
+    cursor: pointer;
+    user-select: none;
+}
+
+.active-item {
+    color: #70aed2;
+}
+/*end of gallery*/
+
+/*customers*/
+.customers{
+    background-color: #151f20;
+}
+
+/*end of customers*/
+
+/*pricing*/
+.card-1, .card-2, .card-3{
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.5)), url(images/travel2.jpg) center no-repeat; 
+    box-shadow: 7px 18px 50px #555;
+    max-width: 400px;
+}
+.card-list-item{
+    border-bottom: 1px groove #eee;
+    width: 55%;
+    margin: auto;
+}
+.price-card-button{
+    background-color: #f5593d;
+    width: 130px;
+    border-radius: 25px;
+    box-shadow: 5px 8px 18px #000;
+    transition: all .2s;
+}
+.price-card-button:hover{
+    background-color: #f9793d;
+    transform: translateY(-2px);
+}
+
+.moveFromLeft{
+    animation-name: moveFromLeft;
+    animation-duration: 2s;
+}
+
+.moveFromRight{
+    animation-name: moveFromRight;
+    animation-duration: 2s;
+}
+
+.moveFromBottom{
+    animation-name: moveFromBottom;
+    animation-duration: 2s;
+}
+
+@keyframes moveFromLeft{
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+         transform: translateX(0);
+         opacity: 1;
+    }
+}
+
+@keyframes moveFromRight{
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+         transform: translateX(0);
+         opacity: 1;
+    }
+}
+
+@keyframes moveFromBottom{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+         transform: translateY(0);
+         opacity: 1;
+    }
+}
+/*end of pricing*/
+
+/*contact*/
+.contact{
+    background: linear-gradient(105deg, rgba(21, 31, 32, 1) 0%, rgba(21, 31, 32, .95) 50%, transparent 50%), url(images/BGSLIDER.jpg) center center no-repeat ;
+}
+.input{
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    transition: all .8s;
+}
+
+.input:focus{
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    border-bottom: 2px solid #f5593d;
+
+}
+.submit-button{
+    background: #f5593d;
+    color: #eee;
+    transition: all .3s;
+}
+
+.submit-button:hover{
+    background: #f5593d;
+    transform: translateY(-3px);
+}
+.label{
+    color: #777;
+    display: block;
+    margin-top: -70px;
+    margin-left: 4px;
+    font-size: 13px;
+    transition: all .3s;
+}
+.input:placeholder-shown + .label{
+    transform: translate(20px,20px);
+    opacity: 0;
+    visibility: hidden;
+}
+@media (max-width: 992px) {
+    .contact{
+        background: linear-gradient(
+        rgba(21, 31, 32, 1) ,
+        rgba(21, 31, 32, .95) );
+    }
+
+    .contact-form{
+        width: 80%;
+        margin:auto;
+    }
+}
+/*end of contact*/
+
+/*footer*/
+.footer-link{
+    color: #eee;
+    font-size: 13px;
+    transition: all .3s;
+}
+
+.footer-link:hover{
+    color: #70aed2;
+    text-decoration: none;
+}
+/*end of footer*/
+    </style>
+  </head>
+  <body>
+      <!--header-->
+      <header>
+          <!--navbar-->
+          <nav class="navbar navbar-expand-lg fixed-top nav-menu">
+              <a href="#" class="navbar-brand text-light text-uppercase">
+                <span class="h2 font-weight-bold">photo</span><span class="h1">X</span></a>
+               <button class="navbar-toggler nav-button" type="button" data-toggle="collapse" data-target="#myNav">
+                   <div class="bg-light line1"></div>
+                   <div class="bg-light line2"></div>
+                   <div class="bg-light line3"></div>
+               </button>
+             <div class="collapse navbar-collapse justify-content-end text-uppercase font-weight-bold" id="myNav">
+                 <ul class="navbar-nav">
+                     <li class="nav-item">
+                         <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Contact</a>
+                    </li>
+                 </ul>
+             </div>
+          </nav>
+          <!--end of navbar-->
+
+          <!--banner-->
+          <div class="text-light text-md-right text-center banner">
+              <h1 class="display-4 banner-heading">Welcome to <span class="text-uppercase"> photo</span><span class="display-3">X </span></h1>
+              <p class="lead banner-par">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          </div>
+          <!--end of banner-->
+      </header>
+      <!--end of header-->
+      
+      <!--mission-->
+      <section class="p-5 mission">
+      <div class="container-fluid">
+          <!--title-->
+          <div class="row text-white text-center">
+              <div class="col m-4">
+                  <h1 class="display-4 mb-4">Our Mission</h1>
+                  <div class="underline mb-4"></div>
+                  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt sed natus obcaecati! Ipsam fugiat illo at, voluptatum dolores nesciunt?
+
+                  </p>
+              </div>
+          </div>
+          <!--end of title-->
+
+          <div class="row my-5">
+           <div class="col-md-4 text-center">
+            <i class="fas fa-cogs fa-5x text-danger mb-4"></i>
+            <h1 class="text-white mb-3">Creativity</h1>
+            <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id maiores, totam dicta voluptas qui, odit perspiciatis magnam, soluta quo quae sint laudantium minima obcaecati nisi.</p>
+           </div>
+           <div class="col-md-4 text-center">
+               
+            <i class="far fa-thumbs-up  fa-5x text-danger mb-4"></i>
+            <h1 class="text-white mb-3">Quality</h1>
+            <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id maiores, totam dicta voluptas qui, odit perspiciatis magnam, soluta quo quae sint laudantium minima obcaecati nisi.</p>
+           </div>
+           <div class="col-md-4 text-center">
+               
+            <i class="far fa-handshake fa-5x text-danger mb-4"></i>
+            <h1 class="text-white mb-3">Experience</h1>
+            <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id maiores, totam dicta voluptas qui, odit perspiciatis magnam, soluta quo quae sint laudantium minima obcaecati nisi.</p>
+           </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-5 text-center">
+                  <img src="images/travel5.jpg" width="350" class="img-fluid camera-img">
+              </div>
+              <div class="col-lg-7 text-white text-lg-right text-center mission-text">
+                  <h1>We know what we do</h1>
+                  <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus possimus unde nam optio expedita sequi blanditiis quod laboriosam ipsam quisquam.</p>
+              </div>
+          </div>
+      </div>
+      </section>
+      <!--end of mission-->
+
+
+      <!--collection-->
+      <section class="bg-secondary py-4">
+          <div class="container-fluid">
+                 <!--title-->
+          <div class="row text-white text-center">
+            <div class="col m-4">
+                <h1 class="display-4 mb-4">Collection</h1>
+                <div class="underline mb-4"></div>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt sed natus obcaecati! Ipsam fugiat illo at, voluptatum dolores nesciunt?
+
+                </p>
+            </div>
+        </div>
+        <!--end of title-->
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Nature Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Travel Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Party Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Nature Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Travel Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card border-0 card-shadow">
+                    <img src="images/travel3.jpg" class="card-img">
+                    <div class="card-img-overlay">
+                        <h5 class="text-white text-uppercase font-weight-bold p-2 heading">Party Photography</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+          </div>
+      </section>
+      <!--end of collection-->
+
+
+      <!--gallery-->
+      <section class="py-5">
+          <div class="container-fluid">            
+                 <!--title-->
+          <div class="row text-muted text-center">
+            <div class="col m-4">
+                <h1 class="display-4 mb-4">Gallery</h1>
+                <div class="underline-dark mb-4"></div>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt sed natus obcaecati! Ipsam fugiat illo at, voluptatum dolores nesciunt?
+
+                </p>
+            </div>
+        </div>
+        <!--end of title-->
+
+        <ul class="list-inline text-center text-uppercase font-weight-bold my-4">
+            <li class="list-inline-item gallery-list-item active-item" data-filter="all">ALL
+                <span class="mx-md-5 mx-3 text-muted">/</span>
+            </li>
+            <li class="list-inline-item gallery-list-item" data-filter="new">New
+                <span class="mx-md-5 mx-3 text-muted">/</span>
+            </li>
+            <li class="list-inline-item gallery-list-item" data-filter="free">Free
+                <span class="mx-md-5 mx-3 text-muted">/</span>
+            </li>
+            <li class="list-inline-item gallery-list-item" data-filter="pro">Pro
+                
+            </li>
+        </ul>
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="filter new">
+                    <img src="images/travel1.jpg" width="300" height="200">
+                </div>
+                <div class="filter free">
+                    <img src="images/travel2.jpg" width="300" height="200">
+                </div>
+                <div class="filter new">
+                    <img src="images/travel3.jpg" width="300" height="200">
+                </div>
+                <div class="filter new">
+                    <img src="images/travel4.jpg" width="300" height="200">
+                </div>
+                <div class="filter free">
+                    <img src="images/travel5.jpg" width="300" height="200">
+                </div>
+                <div class="filter pro">
+                    <img src="images/travel6.jpg" width="300" height="200">
+                </div>
+                <div class="filter new">
+                    <img src="images/travel2.jpg" width="300" height="200">
+                </div>
+                <div class="filter free">
+                    <img src="images/travel1.jpg" width="300" height="200">
+                </div>
+                <div class="filter pro">
+                    <img src="images/travel3.jpg" width="300" height="200">
+                </div>
+                <div class="filter pro">
+                    <img src="images/travel4.jpg" width="300" height="200">
+                </div>
+                <div class="filter free">
+                    <img src="images/travel3.jpg" width="300" height="200">
+                </div>
+                <div class="filter new">
+                    <img src="images/travel2.jpg" width="300" height="200">
+                </div>
+                <div class="filter pro">
+                    <img src="images/travel3.jpg" width="300" height="200">
+                </div>
+                <div class="filter pro">
+                    <img src="images/travel5.jpg" width="300" height="200">
+                </div>
+                <div class="filter new">
+                    <img src="images/travel6.jpg" width="300" height="200">
+                </div>
+                <div class="filter free">
+                    <img src="images/travel1.jpg" width="300" height="200">
+                </div>
+            </div>
+        </div>
+          </div>
+      </section>
+      <!--end of gallery-->
+     <!--customers-->
+     <section class="p-5 customers">
+     <div class="container-fluid">
+         
+          <!--title-->
+          <div class="row text-white text-center">
+            <div class="col m-4">
+                <h1 class="display-4 mb-4">Happy Customers</h1>
+                <div class="underline mb-4"></div>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt sed natus obcaecati! Ipsam fugiat illo at, voluptatum dolores nesciunt?
+
+                </p>
+            </div>
+        </div>
+        <!--end of title-->
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+             <div class="carousel slide" data-ride="carousel" id="customer-carousel">
+                 <ol class="carousel-indicators">
+                     <li data-target="#customer-carousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#customer-carousel" data-slide-to="1"></li>
+                     <li data-target="#customer-carousel" data-slide-to="2"></li>
+                 </ol>
+                 <div class="carousel-inner">
+                     <div class="carousel-item text-center active">
+                          <img src="images/travel3.jpg" width="150" class="img-fluid rounded-circle m-5">
+                          <blockquote class="blockquote text-white">
+                              <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eaque aspernatur impedit magni ut ratione facere? Aut fugiat itaque iusto!
+
+                              </p>
+                          </blockquote>
+                          <h5 class="text-light text-uppercase font-weight-bold mb-3">Monica</h5>
+                          <ul class="list-inline mb-5">
+                              <li class="list-inline-item">
+                                  <i class="fas fa-star text-warning"></i>
+                              </li>
+                              <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                          </ul>
+                     </div>
+                     <div class="carousel-item text-center ">
+                          <img src="images/travel3.jpg" width="150" class="img-fluid rounded-circle m-5">
+                          <blockquote class="blockquote text-white">
+                              <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eaque aspernatur impedit magni ut ratione facere? Aut fugiat itaque iusto!
+
+                              </p>
+                          </blockquote>
+                          <h5 class="text-light text-uppercase font-weight-bold mb-3">John</h5>
+                          <ul class="list-inline mb-5">
+                              <li class="list-inline-item">
+                                  <i class="fas fa-star text-warning"></i>
+                              </li>
+                              <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                          </ul>
+                     </div>
+                     <div class="carousel-item text-center ">
+                          <img src="images/travel3.jpg" width="150" class="img-fluid rounded-circle m-5">
+                          <blockquote class="blockquote text-white">
+                              <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eaque aspernatur impedit magni ut ratione facere? Aut fugiat itaque iusto!
+
+                              </p>
+                          </blockquote>
+                          <h5 class="text-light text-uppercase font-weight-bold mb-3">Helen</h5>
+                          <ul class="list-inline mb-5">
+                              <li class="list-inline-item">
+                                  <i class="fas fa-star text-warning"></i>
+                              </li>
+                              <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fas fa-star text-warning"></i>
+                            </li>
+                          </ul>
+                     </div>
+                 </div>
+             </div>
+
+            </div>
+        </div>
+     </div>
+     </section>
+
+     <!--end of customers-->
+     <!--pricing-->
+      <section class="bg-light text-center p-5">
+     <div class="container-fluid">     
+        <!--title-->
+             <div class="row text-muted text-center">
+               <div class="col m-4">
+                    <h1 class="display-4 mb-4">Join Us</h1>
+                     <div class="underline-dark mb-4"></div>
+                    <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt sed natus obcaecati! Ipsam fugiat illo at, voluptatum dolores nesciunt?
+        
+                    </p>
+               </div>
+           </div>
+                <!--end of title-->
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <div class="card card-1 text-light py-4 my-4 mx-auto">
+                    <div class="card-body">
+                        <h5 class="text-uppercase font-weight-bold mb-5">Monthly Membership</h5>
+                        <h1 class="display-4"> <i class="fas fa-dollar-sign"></i> 19</h1>
+                        <ul class="list-unstyled">
+                            <li class="font-weight-bold py-3 card-list-item">Photoshop</li>
+                            <li class="font-weight-bold py-3 card-list-item">After Effects</li>
+                            <li class="font-weight-bold py-3 card-list-item">Graphic Design</li>
+                            <li class="font-weight-bold py-3 card-list-item border-0">Video Motage</li>
+                        </ul>
+                        <a href="#" class="btn p-2 text-uppercase font-weight-bold text-light
+                        price-card-button">Sign-up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-2 text-light py-4 my-4 mx-auto">
+                    <div class="card-body">
+                        <h5 class="text-uppercase font-weight-bold mb-5">Unlimited Access</h5>
+                        <h1 class="display-4"> <i class="fas fa-dollar-sign"></i> 499</h1>
+                        <ul class="list-unstyled">
+                            <li class="font-weight-bold py-3 card-list-item">Photoshop</li>
+                            <li class="font-weight-bold py-3 card-list-item">After Effects</li>
+                            <li class="font-weight-bold py-3 card-list-item">Graphic Design</li>
+                            <li class="font-weight-bold py-3 card-list-item ">Video Motage</li>                           
+                            <li class="font-weight-bold py-3 card-list-item border-0">Clip Making</li>
+                        </ul>
+                        <a href="#" class="btn p-2 text-uppercase font-weight-bold text-light
+                        price-card-button">Sign-up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-3 text-light py-4 my-4 mx-auto">
+                    <div class="card-body">
+                        <h5 class="text-uppercase font-weight-bold mb-5">Annual Membership</h5>
+                        <h1 class="display-4"> <i class="fas fa-dollar-sign"></i> 119</h1>
+                        <ul class="list-unstyled">
+                            <li class="font-weight-bold py-3 card-list-item">Photoshop</li>
+                            <li class="font-weight-bold py-3 card-list-item">After Effects</li>
+                            <li class="font-weight-bold py-3 card-list-item">Graphic Design</li>
+                            <li class="font-weight-bold py-3 card-list-item border-0">Video Motage</li>
+                        </ul>
+                        <a href="#" class="btn p-2 text-uppercase font-weight-bold text-light
+                        price-card-button">Sign-up!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-5">
+            <h2 class="text-muted mb-4">Thanks for being with us!</h2>
+            <i class="fas fa-coffee fa-3x"></i>
+        </div>
+     </div>
+      </section>
+     <!--end of pricing-->
+
+     <!--contact-->
+     <section class="contact p-5">
+         <div class="container-fluid">
+             <div class="row">
+                 <div class="col-lg-5 pb-4">
+                     <h3 class="display-4 mb-5 text-white">Get In Touch</h3>
+                     <form  class="contact-form">
+                         <div class="form-group py-4">
+                             <input type="text" class="form-control my-2 p-2 input" placeholder="Name">
+                             <label for="name" class="label">Name</label>
+                         </div>
+                         <div class="form-group py-4">
+                            <input type="email" class="form-control my-2 p-2 input" placeholder="Email Address">
+                            <label for="email" class="label">Email Address</label>
+                        </div>
+                        <div class="form-group py-4 my-4">
+                            <input type="checkbox" checked>
+                            <label for="check" class="text-white">Send Announcemets</label>
+                        </div>
+                        <button type="submit" class="btn btn-block p-2 font-weight-bold text-uppercase submit-button">Subscribe</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <!--end of contact-->
+     <!--footer-->
+     <footer class="bg-dark px-5 py-5">
+     <div class="container-fluid">
+         <div class="row text-light py-4">
+             <div class="col-lg-4 col-sm-6">
+              <h5 class="pb-3">About Us</h5>
+              <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, placeat? Provident, quos optio? Deserunt tempora nostrum architecto labore deleniti nobis.</p>
+             </div>
+             <div class="col-lg-2 col-sm-6">
+                <h5 class="pb-3">Visit Us</h5>  
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Mission</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Collection</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Customers</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Contact</a>
+                    </li>
+                </ul>
+             </div>
+             <div class="col-lg-2 col-sm-6">
+                <h5 class="pb-3">Need Help?</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="footer-link text-uppercase">Customer Service</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link text-uppercase">Online Chat</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link text-uppercase">Support</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-info">photox@email.com</a>
+                    </li>
+                </ul>  
+             </div>
+             <div class="col-lg-4 col-sm-6">
+                <h5 class="pb-3">Stay Conected</h5>
+                <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit fugiat nostrum deserunt quod consequuntur doloremque recusandae voluptas vero laborum tenetur?</p>
+                <form class="mb-3">
+                    <div class="input-group">
+                     <input type="text" class="form-control" placeholder="Email Address">
+                     <div class="input-group-append">
+                         <button type="button" class="btn bg-danger 
+                         text-white text-uppercase font-weight-bold">Sign Up</button>
+                     </div>
+                    </div>
+                </form>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fab
+                        fa-facebook-square fa-2px text-primary"></i></li>
+                    <li class="list-inline-item"><i class="fab
+                         fa-google-plus fa-2px text-danger"></i></li>
+                    <li class="list-inline-item"><i class="fab
+                        fa-instagram fa-2px text-danger"></i></li>
+                    <li class="list-inline-item"><i class="fab
+                        fa-twitter fa-2px text-info"></i></li>
+                    <li class="list-inline-item"><i class="fab
+                        fa-youtube fa-2px text-danger"></i></li>
+                </ul>
+            </div>
+         </div>
+         <div class="row">
+             <div class="col text-center text-light border-top pt-3">
+                 <p>&copy; 2020 Copyright, All Rights Reserved</p>
+             </div>
+         </div>
+     </div>
+     </footer>
+     <!--end of footer-->
+
+
+     <script>
+          $(document).ready(function(){
+ $('.nav-button').click(function(){
+ $('.nav-button').toggleClass('change');
+ });
+
+ $(window).scroll(function(){
+ let positon = $this.scrollTop();
+ if(positon => 200) {
+     $('.nav-menu').addClass('custom-navbar');
+ }else {
+    $('.nav-menu').removeClass('custom-navbar');
+ }
+ });
+ $(window).scroll(function(){
+     let positon = $(this).scrollTop(); 
+     if(positon >= 650){
+         $('.camera-img').addClass('fromLeft');
+         $('.mission-text').addClass('fromRight');
+   }else {     
+    $('.camera-img').removeClass('fromLeft');
+    $('.mission-text').removeClass('fromRight');
+   }
+ });
+ $('.gallery-list-item').click(function(){
+ let value = $(this).attr('data-filter');
+ if(value === 'all'){
+     $('.filter').show(300);
+ }else {
+     $('.filter').not('.' + value).hide(300);
+     $('.filter').filter('.' + value).show(300);
+ }
+ });
+
+ $('.gallery-list-item').click(function(){
+     $(this).addClass('active-item').siblings().removeClass(active-item);
+ });
+
+ $(window).scroll(function(){
+  let positon = $(this).scrollTop();
+  if(positon >= 4300){
+      $('.card-1').addClass('moveFromLeft');
+      $('.card-2').addClass('moveFromBottom');
+      $('.card-3').addClass('moveFromRight');
+  }else{
+      
+    $('.card-1').removeClass('moveFromLeft');
+    $('.card-2').removeClass('moveFromBottom');
+    $('.card-3').removeClass('moveFromRight');
+  }
+ });
+ });
+     </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+</body>
+</html>
